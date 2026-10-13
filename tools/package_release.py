@@ -8,8 +8,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_FILES = (
-    '.gitattributes', '.gitignore', '.github/workflows/tests.yml', 'README.md', 'LICENSE',
-    'THIRD_PARTY_NOTICES.md', 'CHANGELOG.md', 'start.cmd', 'start.sh', 'docs/preview.png',
+    '.gitattributes', '.gitignore', 'README.md', 'LICENSE', '分享说明.txt',
+    'THIRD_PARTY_NOTICES.md', 'CHANGELOG.md', 'start.cmd', 'start.sh', 'docs/preview.png', 'docs/USAGE.md',
     'nebula/__init__.py', 'nebula/__main__.py', 'nebula/dataset.py', 'nebula/demo.py',
     'nebula/store.py', 'nebula/server.py', 'adapters/feishu_json.py', 'examples/minimal.json',
     'web/index.html', 'web/atlas.css', 'web/atlas.js', 'web/fragments.js', 'web/galaxy3d.js',
@@ -27,9 +27,10 @@ CHECKS = [
 
 def public_files():
     verified = []
+    root = ROOT.resolve()
     for relative in PUBLIC_FILES:
-        file = (ROOT / relative).resolve()
-        if not file.is_relative_to(ROOT) or not file.is_file():
+        file = (root / relative).resolve()
+        if not file.is_relative_to(root) or not file.is_file():
             raise ValueError(f'Missing or out-of-root release file: {relative}')
         body = file.read_bytes()
         if file.suffix != '.png':

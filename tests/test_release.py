@@ -12,6 +12,15 @@ spec.loader.exec_module(release)
 
 
 class ReleaseTests(unittest.TestCase):
+    def test_noncanonical_root_resolves_before_containment_check(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'child').mkdir()
+            (root / 'README.md').write_text('Public example project', encoding='utf-8')
+            alias = root / 'child' / '..'
+            with patch.object(release, 'ROOT', alias), patch.object(release, 'PUBLIC_FILES', ('README.md',)):
+                self.assertEqual(release.public_files()[0][0], 'README.md')
+
     def test_archive_uses_allowlist_and_ignores_local_data(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
