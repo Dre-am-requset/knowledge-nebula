@@ -1,0 +1,25 @@
+# Local data and personal state are never repository assets.
+/data/
+*.sqlite
+*.sqlite3
+*.db
+*-wal
+*-shm
+*.log
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+/dist/
+/build/
+*.egg-info/
+*.zip
+# Source exports belong under ignored data/, not examples/.
+*private-export*
+*chat-export*

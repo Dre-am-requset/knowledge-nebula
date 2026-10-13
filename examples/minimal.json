@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "label": "我的知识库格式示例（自编）",
+  "demo": true,
+  "groups": [{"id": "example-notes", "name": "示例笔记"}],
+  "categories": [{"id": "custom-learning", "name": "学习方法", "color": "#79dedc", "description": "通过练习理解知识。"}],
+  "topics": [{"id": "practice", "category": "custom-learning", "name": "复现与练习"}],
+  "sources": [{
+    "id": "source:practice-001", "title": "一次虚构练习",
+    "body": "学习一条方法后，换一个输入再做一次。保存输入、步骤与结果，以便核对是否独立掌握。",
+    "chat": "example-notes", "sender": "示例作者", "time": "2026-01-01T10:00:00+00:00",
+    "kind": "document", "url": "", "withdrawn": false
+  }],
+  "atoms": [{
+    "id": "practice-001", "title": "读完之后换一个输入复现",
+    "summary": "用独立输入检查自己是否掌握方法。",
+    "body": "选一个不同于教材的小例子，独立完成操作并保存结果；无法复现时记录具体卡点，回到出处查证。",
+    "topic": "practice", "kind": "method", "importance": 72,
+    "source_ids": ["source:practice-001"]
+  }],
+  "cards": [],
+  "paths": []
+}
