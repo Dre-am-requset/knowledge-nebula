@@ -2,6 +2,8 @@
 
 一个在本机运行的三维知识库。将笔记、文档或聊天导出整理成小知识，像探索星云一样旋转、缩放、点击阅读，并沿出处查看原文。
 
+**[下载 v0.1.0 ZIP](https://github.com/Dre-am-requset/knowledge-nebula/releases/download/v0.1.0/knowledge-nebula-v0.1.0.zip)** · [查看 Release 与使用说明](https://github.com/Dre-am-requset/knowledge-nebula/releases/tag/v0.1.0)
+
 ![知识星云演示](docs/preview.png)
 
 ## 功能
